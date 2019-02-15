@@ -1,0 +1,27 @@
+all: hello
+
+MAJOR := 5
+MINOR := 1
+RELISE := 10
+VERSION := $(MAJOR).$(MINOR).$(RELISE)
+
+hello: main.o libmylib.so.$(VERSION)
+	g++  -o hello main.o -L. libmylib.so.$(VERSION)
+
+main.o: main.cpp
+	g++ -c main.cpp
+
+libmylib.so.$(VERSION): bye.o here.o hello.o
+	ar cr libmylib.so.$(VERSION) bye.o here.o hello.o
+
+bye.o: bye.cpp
+	g++ -c bye.cpp
+
+hello.o: hello.cpp
+	g++ -c hello.cpp
+
+here.o: here.cpp
+	g++ -c here.cpp
+
+clean:
+	rm -f *.o *.so hello

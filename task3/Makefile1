@@ -1,0 +1,22 @@
+all: hello
+
+hello: main.o mylib.a
+	g++  -o hello main.o -L. mylib.a
+
+main.o: main.cpp
+	g++ -c main.cpp
+
+mylib.a: bye.o here.o hello.o
+	ar cr mylib.a bye.o here.o hello.o
+
+bye.o: bye.cpp
+	g++ -c bye.cpp
+
+hello.o: hello.cpp
+	g++ -c hello.cpp
+
+here.o: here.cpp
+	g++ -c here.cpp
+
+clean:
+	rm -f *.o *.a hello
