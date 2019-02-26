@@ -3,7 +3,7 @@
 Number::Number(): numerator(0), denominator(1) {}
 
 Number::Number(long numerator, long denominator): numerator(numerator) {
-	if (denominator == 0) throw "Suck my dick";
+	if (denominator == 0) throw "f";
 	this->denominator = denominator;
 }
 
@@ -28,7 +28,7 @@ Number Number::multiply(Number n1, Number n2) {
 }
 
 Number Number::divide(Number n1, Number n2) {
-	if (n2.numerator == 0) throw "Suck my dick";
+	if (n2.numerator == 0) throw "f";
 	long numerator, denominator;
 	numerator = n1.numerator * n2.denominator;
 	denominator = n1.denominator * n2.numerator;
@@ -84,8 +84,6 @@ Number& Number::operator= (const Number &val) {
 
 
 bool Number::operator <(const Number &val) const {
-    //Number n1(this->numerator, this->denominator);
-    //Number n2(val.numerator, val.denominator);
     Number n1 = *this;
     Number n2 = val;
     makeCommonDenominator(n1, n2);

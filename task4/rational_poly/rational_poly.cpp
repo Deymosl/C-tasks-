@@ -34,17 +34,17 @@ int main(int argc, char* argv[]) {
     switch (Number::compare(polynom.count(q1), polynom.count(q2))) {
         case (1):
         {
-            std::cout << "Result Nuber1 < Number2" << std::endl;
+            std::cout << "Result Number1 < Number2" << std::endl;
             break;
         }
         case (0):
         {
-            std::cout << "Result Nuber1 == Number2" << std::endl;
+            std::cout << "Result Number1 == Number2" << std::endl;
             break;
         }
         case (-1):
         {
-            std::cout << "Result Nuber1 > Number2" << std::endl;
+            std::cout << "Result Number1 > Number2" << std::endl;
             break;
         }
     }
